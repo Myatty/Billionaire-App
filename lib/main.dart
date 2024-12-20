@@ -12,22 +12,29 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  void addFunction() {
-    print('Button is clicked');
+  void addMoney() {
+    setState(() {
+      balance += 500;
+    });
   }
 
+  double balance = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData.dark(useMaterial3: true),
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Billionaire App'),
+            title: Text(
+              'Billionaire App',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            backgroundColor: Color(0xFF121212),
             centerTitle: true,
           ),
           body: Container(
             padding: EdgeInsets.all(25),
-            color: Colors.blueGrey[700],
+            color: Color(0xFF222222),
             width: double.infinity,
             height: double.infinity,
             child: Column(
@@ -38,9 +45,13 @@ class _MyAppState extends State<MyApp> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Balance'),
+                      Text('My Balance', style: TextStyle(fontSize: 32)),
                       SizedBox(height: 10),
-                      Text("0")
+                      Text(
+                        '\$$balance',
+                        style:
+                            TextStyle(fontSize: 25, color: Color(0xFFFFD700)),
+                      )
                     ],
                   ),
                 ),
@@ -48,10 +59,13 @@ class _MyAppState extends State<MyApp> {
                   flex: 1,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red[700],
+                          backgroundColor: Color(0xFF121212),
                           minimumSize: Size(double.infinity, 0)),
-                      onPressed: addFunction,
-                      child: Text('Click here')),
+                      onPressed: addMoney,
+                      child: Text(
+                        'Click here',
+                        style: TextStyle(fontSize: 20, color: Colors.white),
+                      )),
                 )
               ],
             ),
