@@ -4,11 +4,16 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   void addFunction() {
-    print("Button is clicked");
+    print('Button is clicked');
   }
 
   @override
@@ -17,7 +22,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData.dark(useMaterial3: true),
         home: Scaffold(
           appBar: AppBar(
-            title: Text("Billionaire App"),
+            title: Text('Billionaire App'),
+            centerTitle: true,
           ),
           body: Container(
             padding: EdgeInsets.all(25),
@@ -32,7 +38,7 @@ class MyApp extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Balance"),
+                      Text('Balance'),
                       SizedBox(height: 10),
                       Text("0")
                     ],
@@ -45,7 +51,7 @@ class MyApp extends StatelessWidget {
                           backgroundColor: Colors.red[700],
                           minimumSize: Size(double.infinity, 0)),
                       onPressed: addFunction,
-                      child: Text("Click here")),
+                      child: Text('Click here')),
                 )
               ],
             ),
