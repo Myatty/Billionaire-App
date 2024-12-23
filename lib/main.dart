@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,13 +13,26 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  void addMoney() {
+  double balance = 0;
+
+  void addMoney() async {
     setState(() {
       balance += 500;
     });
+
+    // Obtain shared preferences
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setDouble('balance', balance);
   }
 
-  double balance = 0;
+  void loadBalance() async {
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+
+    setState(() {
+      balance = pref.getDouble('balance') ?? 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -51,7 +65,9 @@ class _MyAppState extends State<MyApp> {
                         '\$$balance',
                         style:
                             TextStyle(fontSize: 25, color: Color(0xFFFFD700)),
-                      )
+                      ),
+                      OutlinedButton(
+                          onPressed: loadBalance, child: Text("Load Balance"))
                     ],
                   ),
                 ),
