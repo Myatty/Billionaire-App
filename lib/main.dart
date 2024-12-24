@@ -25,6 +25,12 @@ class _MyAppState extends State<MyApp> {
     await pref.setDouble('balance', balance);
   }
 
+  @override
+  void initState() {
+    loadBalance();
+    super.initState();
+  }
+
   void loadBalance() async {
     final SharedPreferences pref = await SharedPreferences.getInstance();
 
@@ -66,8 +72,6 @@ class _MyAppState extends State<MyApp> {
                         style:
                             TextStyle(fontSize: 25, color: Color(0xFFFFD700)),
                       ),
-                      OutlinedButton(
-                          onPressed: loadBalance, child: Text("Load Balance"))
                     ],
                   ),
                 ),
