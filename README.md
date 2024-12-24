@@ -1,16 +1,18 @@
-# billionaireapp
+# Nga Tat Pyar
 
-A new Flutter project.
+Nga Tat Pyar is a cross-platform mobile app developed using flutter as part of learning process. This app serves only one purpose (u can guess it by the name),  which is giving u a mere amount of money everytime u click a button. Legend says the real operator of this app (the legendary NgaTatPyar) steals the money from the rich and gives u(the poor xD). So in memory of this legend, I had to decide his name should be inscribed in the app honoring his legacy of redistribution of weath.
 
-## Getting Started
+## By developing this mobile app, i had gained hand on experience in deep-diving flutter and many insightful tips and tricks. I will be listing some of the flutter features which i had achieved below.
 
-This project is a starting point for a Flutter application.
+<ul>
+  <li>Working with buttons.</li>
+  <li>Expanded, Flex and Button styling</li>
+  <li>Stateful Widgets and states in flutter</li>
+  <li>Stateful Widgets and states in flutter</li>
+  <li>Shared Preferences (saving data locally)</li>
+  <li>Child to Parent Communication</li>
+  <li>Parent to Child Communication</li>
+  <li>Changing App icons and name on both android and ios</li>
+</ul>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
